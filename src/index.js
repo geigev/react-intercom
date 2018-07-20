@@ -50,9 +50,11 @@ export default class Intercom extends Component {
     }
 
     window.intercomSettings = { ...otherProps, app_id: appID };
+  }
 
+  componentDidMount() {
     if (window.Intercom) {
-      window.Intercom('boot', otherProps);
+      window.Intercom('boot');
     }
   }
 
